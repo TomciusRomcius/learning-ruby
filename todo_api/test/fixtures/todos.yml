@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  isCompleted: false
+  date: 2026-08-02
+
+two:
+  title: MyString
+  isCompleted: false
+  date: 2026-08-02

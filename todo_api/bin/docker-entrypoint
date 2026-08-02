@@ -8,9 +8,4 @@ fi
 # Remove a stale PID file left behind by an unclean shutdown
 rm -f tmp/pids/server.pid
 
-# Prepare the database when booting the Rails server
-if [[ " $* " == *" ./bin/rails server "* ]] || [[ " $* " == *" bin/rails server "* ]]; then
-  ./bin/rails db:prepare
-fi
-
 exec "${@}"

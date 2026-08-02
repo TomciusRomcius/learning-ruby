@@ -1,0 +1,11 @@
+class CreateTodos < ActiveRecord::Migration[8.1]
+  def change
+    create_table :todos do |t|
+      t.string :title
+      t.boolean :isCompleted
+      t.date :date
+
+      t.timestamps
+    end
+  end
+end

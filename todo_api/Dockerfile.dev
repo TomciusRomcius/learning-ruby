@@ -1,7 +1,4 @@
-# syntax=docker/dockerfile:1
-# Development image for docker compose. For production, use ./Dockerfile.
-
-FROM docker.io/library/ruby:$4.0.6-slim
+FROM docker.io/library/ruby:4.0.6-slim
 
 WORKDIR /rails
 
