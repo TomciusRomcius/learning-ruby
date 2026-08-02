@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+# Install gems when the bundle volume is empty (first compose up)
+if [ -f Gemfile ]; then
+  bundle check || bundle install
+fi
+
+# Remove a stale PID file left behind by an unclean shutdown
+rm -f tmp/pids/server.pid
+
+# Prepare the database when booting the Rails server
+if [[ " $* " == *" ./bin/rails server "* ]] || [[ " $* " == *" bin/rails server "* ]]; then
+  ./bin/rails db:prepare
+fi
+
+exec "${@}"
