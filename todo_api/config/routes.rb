@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :passwords, param: :token
   get "todos", to: "todos#getAll"
+  get "todos/cookie", to: "todos#cookieTest"
   post "todos", to: "todos#create"
   patch "todos/:id", to: "todos#update"
   delete "todos/:id", to: "todos#destroy"
+
+  post "user/register", to: "user#register"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
